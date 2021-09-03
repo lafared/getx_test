@@ -29,7 +29,13 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final _counterController = Get.put(CounterController());
+  // final _counterController = Get.put(CounterController());
+
+  @override
+  void initState() {
+    super.initState();
+    Get.lazyPut<CounterController>(() => CounterController());
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,12 +50,13 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               'You have pushed the button this many times:',
             ),
-            Obx(() => Text('${_counterController.count}')),
+            // Obx(() => Text('${_counterController.count}')),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
+          print("go to sub page");
           Get.to(SubPage(title: 'SubPage Title',));
           },
         tooltip: 'Increment',
