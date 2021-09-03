@@ -63,6 +63,8 @@ class _MyHomePageState extends State<MyHomePage> {
           print("go to sub page");
           // Get.to(SubPage(title: 'SubPage Title',));
           Get.toNamed('/sub', arguments: "arg1");
+          // Get.offNamed('/sub');
+          // Get.offAllNamed('/sub');
           },
         tooltip: 'Increment',
         child: Icon(Icons.add),
