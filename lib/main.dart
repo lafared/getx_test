@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:get/get_rx/src/rx_types/rx_types.dart';
-import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
-import 'package:get/get_state_manager/src/simple/get_controllers.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(MyApp());
@@ -31,7 +28,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  CounterController _counterController = CounterController();
+  final CounterController _counterController = Get.put(CounterController());
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +48,10 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {_counterController.increment();},
+        onPressed: () {
+          _counterController.increment();
+          //Get.deleteAll();
+          },
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
@@ -63,5 +63,27 @@ class CounterController extends GetxController {
   RxInt count = 0.obs;
   void increment() {
     count++;
+  }
+
+  @override
+  void onInit() {
+    super.onInit();
+    print("CounterController, onInit");
+    ever(count, (_) => print("$_ has been changed"));
+    once(count, (_) => print("$_ was changed once"));
+    debounce(count, (_) => print("debounce$_"), time: Duration(seconds: 2));
+    interval(count, (_) => print("interval $_"), time: Duration(seconds: 1));
+  }
+
+  @override
+  void onReady() {
+    super.onReady();
+    print("CounterController, onReady");
+  }
+
+  @override
+  void onClose() {
+    super.onClose();
+    print("CounterController, onClose");
   }
 }
