@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:taegeon_test/main.dart';
+import 'package:get/get.dart';
 
 class SubPage extends StatefulWidget {
   SubPage({Key? key, required this.title}) : super(key: key);
@@ -10,7 +12,7 @@ class SubPage extends StatefulWidget {
 }
 
 class _SubPageState extends State<SubPage> {
-  // final _counterController = Get.put(CounterController());
+  // final CounterController _counterController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -25,13 +27,13 @@ class _SubPageState extends State<SubPage> {
             Text(
               'SubPage',
             ),
-            // Obx(() => Text('${_counterController.count}')),
+            Obx(() => Text('${Get.find<CounterController>().count}')),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // _counterController.increment();
+          Get.find<CounterController>().increment();
           //Get.deleteAll();
           },
         tooltip: 'Increment',
