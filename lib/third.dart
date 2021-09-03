@@ -4,26 +4,17 @@ import 'package:get/get.dart';
 
 import 'CounterControllerForBinding.dart';
 
-class SubPage extends StatefulWidget {
-  SubPage({Key? key, required this.title}) : super(key: key);
+class ThirdPage extends StatefulWidget {
+  ThirdPage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
   @override
-  _SubPageState createState() => _SubPageState();
+  _ThirdPageState createState() => _ThirdPageState();
 }
 
-class _SubPageState extends State<SubPage> {
+class _ThirdPageState extends State<ThirdPage> {
   // final CounterController _counterController = Get.find();
-
-  @override
-  void initState() {
-    super.initState();
-    // print("arg : ${Get.arguments}");
-    print("id : ${Get.parameters['id']}");
-    print("name : ${Get.parameters['name']}");
-    print("pw : ${Get.parameters['pw']}");
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,21 +27,15 @@ class _SubPageState extends State<SubPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'SubPage',
+              'ThirdPage',
             ),
-            ElevatedButton(
-                onPressed: () {
-                  print("go to third page");
-                  Get.toNamed('/third');
-                },
-                child: Icon(Icons.add_circle_sharp)),
-            Obx(() => Text('${Get.find<CounterControllerForBinding>().count}')),
+            // Obx(() => Text('${Get.find<CounterControllerForBinding>().count}')),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Get.find<CounterControllerForBinding>().increment();
+          // Get.find<CounterControllerForBinding>().increment();
           //Get.deleteAll();
           },
         tooltip: 'Increment',

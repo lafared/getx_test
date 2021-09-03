@@ -10,10 +10,10 @@ class CounterControllerForBinding extends GetxController {
   void onInit() {
     super.onInit();
     print("CounterControllerForBinding, onInit");
-    ever(count, (_) => print("$_ has been changed"));
-    once(count, (_) => print("$_ was changed once"));
-    debounce(count, (_) => print("debounce$_"), time: Duration(seconds: 2));
-    interval(count, (_) => print("interval $_"), time: Duration(seconds: 1));
+    ever(count, (_) => print("CounterControllerForBinding: $_ has been changed"));
+    once(count, (_) => print("CounterControllerForBinding: $_ was changed once"));
+    debounce(count, (_) => print("CounterControllerForBinding: debounce$_"), time: Duration(seconds: 2));
+    interval(count, (_) => print("CounterControllerForBinding: interval $_"), time: Duration(seconds: 1));
   }
 
   @override

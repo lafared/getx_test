@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:taegeon_test/SubPageBinding.dart';
 import 'package:taegeon_test/sub.dart';
+import 'package:taegeon_test/third.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,6 +23,10 @@ class MyApp extends StatelessWidget {
             name: '/sub',
             page: () => SubPage(title: 'Sub'),
             binding: SubPageBinding(),
+            transition: Transition.zoom),
+        GetPage(
+            name: '/third',
+            page: () => ThirdPage(title: 'Third'),
             transition: Transition.zoom),
       ],
     );
