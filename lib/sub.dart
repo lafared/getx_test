@@ -17,7 +17,10 @@ class _SubPageState extends State<SubPage> {
   @override
   void initState() {
     super.initState();
-    print("arg : ${Get.arguments}");
+    // print("arg : ${Get.arguments}");
+    print("id : ${Get.parameters['id']}");
+    print("name : ${Get.parameters['name']}");
+    print("pw : ${Get.parameters['pw']}");
   }
 
   @override

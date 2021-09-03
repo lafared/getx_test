@@ -62,7 +62,8 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: () {
           print("go to sub page");
           // Get.to(SubPage(title: 'SubPage Title',));
-          Get.toNamed('/sub', arguments: "arg1");
+          // Get.toNamed('/sub', arguments: "arg1");
+          Get.toNamed('/sub?id=123&name=taegeon');
           // Get.offNamed('/sub');
           // Get.offAllNamed('/sub');
           },
