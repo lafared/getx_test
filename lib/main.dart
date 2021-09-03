@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:taegeon_test/SubPageBinding.dart';
 import 'package:taegeon_test/sub.dart';
 
 void main() {
@@ -17,7 +18,11 @@ class MyApp extends StatelessWidget {
       home: MyHomePage(title: 'Flutter Demo Home Page'),
       getPages: [
         GetPage(name: '/', page: () => MyHomePage(title: 'Home')),
-        GetPage(name: '/sub', page: () => SubPage(title: 'Sub'), transition: Transition.zoom),
+        GetPage(
+            name: '/sub',
+            page: () => SubPage(title: 'Sub'),
+            binding: SubPageBinding(),
+            transition: Transition.zoom),
       ],
     );
   }
