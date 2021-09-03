@@ -29,13 +29,13 @@ class _ThirdPageState extends State<ThirdPage> {
             Text(
               'ThirdPage',
             ),
-            // Obx(() => Text('${Get.find<CounterControllerForBinding>().count}')),
+            Obx(() => Text('${Get.find<CounterControllerForBinding>().count}')),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Get.find<CounterControllerForBinding>().increment();
+          Get.find<CounterControllerForBinding>().increment();
           //Get.deleteAll();
           },
         tooltip: 'Increment',

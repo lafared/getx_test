@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
         GetPage(
             name: '/third',
             page: () => ThirdPage(title: 'Third'),
+            binding: SubPageBinding(),
             transition: Transition.zoom),
       ],
     );
