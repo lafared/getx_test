@@ -15,6 +15,12 @@ class _SubPageState extends State<SubPage> {
   // final CounterController _counterController = Get.find();
 
   @override
+  void initState() {
+    super.initState();
+    print("arg : ${Get.arguments}");
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(

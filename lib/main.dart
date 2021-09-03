@@ -15,6 +15,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
+      getPages: [
+        GetPage(name: '/', page: () => MyHomePage(title: 'Home')),
+        GetPage(name: '/sub', page: () => SubPage(title: 'Sub'), transition: Transition.zoom),
+      ],
     );
   }
 }
@@ -57,7 +61,8 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           print("go to sub page");
-          Get.to(SubPage(title: 'SubPage Title',));
+          // Get.to(SubPage(title: 'SubPage Title',));
+          Get.toNamed('/sub', arguments: "arg1");
           },
         tooltip: 'Increment',
         child: Icon(Icons.add),
