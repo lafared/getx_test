@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:taegeon_test/sub.dart';
 
 void main() {
   runApp(MyApp());
@@ -28,7 +29,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final CounterController _counterController = Get.put(CounterController());
+  final _counterController = Get.put(CounterController());
 
   @override
   Widget build(BuildContext context) {
@@ -49,8 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          _counterController.increment();
-          //Get.deleteAll();
+          Get.to(SubPage(title: 'SubPage Title',));
           },
         tooltip: 'Increment',
         child: Icon(Icons.add),
